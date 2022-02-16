@@ -1,18 +1,20 @@
 package stepdefinitions;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import manager.DriverManager;
 
 public class RunnerHooks {
 
-    @Before
-    public void setupDriver() {
+    @BeforeAll
+    static public void setupDriver() {
         DriverManager.getDriver();
     }
 
-    @After
-    public void quitDriver() {
+    @AfterAll
+    static public void quitDriver() {
         DriverManager.quitDriver();
     }
 

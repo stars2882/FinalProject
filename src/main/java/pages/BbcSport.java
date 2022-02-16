@@ -5,9 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class BbcSport extends BasePage {
-
 
 
     @FindBy(xpath = "//li[contains(@class,'sport-navigation')]//a[contains(@href,'football')]")
@@ -29,11 +32,15 @@ public class BbcSport extends BasePage {
         waitForPageLoadComplete(60);
     }
 
+    @FindBy(xpath = "//p[@class='gel-brevier gs-u-mb']")
+    private WebElement waitElemet;
+
     public boolean searchChampionship(final String keyword) {
-        waitForPageLoadComplete(60);
-        WebElement championship = DriverManager.getDriver().findElement(By.xpath("//h3[contains(text(),'" + keyword + "')]"));
-        ((Locatable) championship).getCoordinates().inViewPort();
-        return championship.isDisplayed();
+        waitVisibilityOfElement(60, waitElemet);
+        WebElement dynamicElement = (new WebDriverWait(DriverManager.getDriver(), 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h3[contains(text(),'" + keyword + "')]")));
+      //  WebElement championship = DriverManager.getDriver().findElement(By.xpath("//h3[contains(text(),'" + keyword + "')]"));
+        return dynamicElement.isDisplayed();
     }
 
     public boolean checkSpecificScore(final String team1, final String team2, final String scoreTeam1, final String scoreTeam2) {

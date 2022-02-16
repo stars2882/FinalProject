@@ -13,9 +13,9 @@ Feature: Smoke Tests from the final task
 
 
     Examples:
-      | homePage             | button | championship             | day    | team1               | team2           | scoreTeam1 | scoreTeam2 |
-      | https://www.bbc.com/ | sport  | Champions League         | 15 FEB | Paris Saint Germain | Real Madrid     | 1          | 0          |
-      | https://www.bbc.com/ | sport  | Irish Premiership        | 15 FEB | Crusaders           | Glenavon        | 0          | 0          |
-      | https://www.bbc.com/ | sport  | Club World Cup           | 12 FEB | Chelsea             | Palmeiras       | 2          | 1          |
-      | https://www.bbc.com/ | sport  | Portuguese Primeira Liga | 7 FEB  | Tondela             | Benfica         | 1          | 3          |
-      | https://www.bbc.com/ | sport  | Turkish Super Lig        | 11 FEB | Altay               | Caykur Rizespor | 0          | 0          |
+      | homePage             | button | championship        | day    | team1               | team2           | scoreTeam1 | scoreTeam2 |
+      | https://www.bbc.com/ | sport  | Champions League    | 15 FEB | Paris Saint Germain | Real Madrid     | 1          | 0          |
+      | https://www.bbc.com/ | sport  | Scottish League Two | 15 FEB | Edinburgh City      | Albion Rovers   | 1          | 2          |
+      | https://www.bbc.com/ | sport  | Club World Cup      | 12 FEB | Chelsea             | Palmeiras       | 2          | 1          |
+      | https://www.bbc.com/ | sport  | Premier League      | 8 FEB  | Newcastle United    | Everton         | 3          | 1          |
+      | https://www.bbc.com/ | sport  | Scottish League Two | 11 FEB | Edinburgh City      | Stirling Albion | 1          | 0          |
